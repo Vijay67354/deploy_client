@@ -15,7 +15,7 @@ const App = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        await axios.post("/api/contact", formData);
+        await axios.post("https://deploy-client-mauve.vercel.app/api/contact", formData);
         alert("✅ Contact saved!");
         setFormData({ name: "", email: "", phone: "" });
       } catch (err) {
