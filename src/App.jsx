@@ -32,7 +32,7 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="max-w-md mx-auto p-4 shadow-lg rounded-lg bg-white">
-      <h2 className="text-xl font-bold mb-4">Contact Form</h2>
+      <h2 className="text-xl font-bold mb-4">dfsghjdfsgfhContact Form</h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <input
           type="text"
