@@ -12,11 +12,10 @@ const App = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-const API_URL = import.meta.env.VITE_API_URL;
 
 const handleSubmit = async (formData) => {
   try {
-    const res = await axios.post(`${API_URL}/api/contact`, formData);
+    const res = await axios.post(`https://deploy-server-vcu2.onrender.com/api/contact`, formData);
     console.log(res.data);
     alert("Contact saved successfully!");
   } catch (error) {
