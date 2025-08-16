@@ -12,16 +12,18 @@ const App = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        await axios.post("https://deploy-client-mauve.vercel.app/api/contact", formData);
-        alert("✅ Contact saved!");
-        setFormData({ name: "", email: "", phone: "" });
-      } catch (err) {
-        alert("❌ Error saving contact");
-      }
-    };
+const API_URL = import.meta.env.VITE_API_URL;
+
+const handleSubmit = async (formData) => {
+  try {
+    const res = await axios.post(`${API_URL}/api/contact`, formData);
+    console.log(res.data);
+    alert("Contact saved successfully!");
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong!");
+  }
+};
 
   return (
     <div className="max-w-md mx-auto p-4 shadow-lg rounded-lg bg-white">
