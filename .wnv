@@ -1,0 +1,2 @@
+MONGO_URI=mongodb+srv://practice66375:s4gqridJMDHR14AR@cluster0.uhfuu42.mongodb.net/lib?retryWrites=true&w=majority&appName=Cluster0
+PORT=5000
