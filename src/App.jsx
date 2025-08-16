@@ -13,16 +13,22 @@ const App = () => {
   };
 
 
-const handleSubmit = async (formData) => {
+const handleSubmit = async (e) => {
+  e.preventDefault(); // page reload रोकने के लिए
+
   try {
-    const res = await axios.post(`https://deploy-server-vcu2.onrender.com/api/contact`, formData);
+    const res = await axios.post(
+      "https://deploy-server-vcu2.onrender.com/api/contact",
+      formData
+    );
     console.log(res.data);
     alert("Contact saved successfully!");
   } catch (error) {
     console.error(error);
-    alert("Something went wrong!");
+    alert("Sghgomething went wrong!");
   }
 };
+
 
   return (
     <div className="max-w-md mx-auto p-4 shadow-lg rounded-lg bg-white">
